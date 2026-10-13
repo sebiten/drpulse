@@ -1,63 +1,20 @@
 <!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0c1015" />
-    <meta name="description" content="DRPulse: seguimiento de diminishing returns para WoW: Forever. Objetivo, foco y placas enemigas. Conoce sus funciones, instalación y comandos." />
-    <meta property="og:title" content="DRPulse · Cada control cuenta" />
-    <meta property="og:description" content="Conoce el próximo DR. Encuentra tu momento. Un tracker de diminishing returns para WoW: Forever." />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/png" href="/drpulse-emblem.png" />
-    <title>DRPulse · Cada control cuenta</title>
-  </head>
-  <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <header class="site-header">
-      <a class="brand" href="#" aria-label="DRPulse, inicio"><img src="/drpulse-emblem.png" alt="" width="42" height="42" /><span>DR<span class="brand-light">PULSE</span></span></a>
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">Menú <span aria-hidden="true">☰</span></button>
-      <nav id="navigation" aria-label="Navegación principal"><a href="#funciones">El addon</a><a href="#demo">Explora el DR</a><a href="#instalacion">Instalación</a><a href="#comandos">Comandos</a></nav>
-      <a class="button button-small header-cta" href="https://legacy.curseforge.com/wow/addons/drpulse" target="_blank" rel="noopener noreferrer">Ver en CurseForge <span aria-hidden="true">↗</span></a>
-    </header>
-    <main id="contenido">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-art" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow"><span class="line"></span> DIMINISHING RETURNS TRACKER</p>
-          <h1 id="hero-title">CADA CONTROL.<br /><span>EN SU MOMENTO.</span></h1>
-          <p class="hero-description">Lee el DR. Anticipa la inmunidad. Decide tu próximo movimiento en WoW: Forever.</p>
-          <div class="hero-actions"><a class="button" href="https://legacy.curseforge.com/wow/addons/drpulse" target="_blank" rel="noopener noreferrer">Ver en CurseForge <span aria-hidden="true">↗</span></a><a class="text-link" href="#demo"><span class="play" aria-hidden="true">▷</span> Explora el DR</a></div>
-        </div>
-        <div class="hero-emblem"><img src="/drpulse-emblem.png" alt="Emblema de DRPulse: monograma DR con un anillo azul segmentado" width="1254" height="1254" fetchpriority="high" /></div>
-        <div class="hero-bottom"><span>WORLD OF WARCRAFT: FOREVER</span><span>CREADO PARA PvP <span class="cross">+</span> ARENAS · BGs · MUNDO ABIERTO</span></div>
-      </section>
-      <div class="facts" aria-label="Datos del addon"><div><strong>08</strong><span>Categorías de DR</span></div><div><strong>03</strong><span>Puntos de seguimiento</span></div><div><strong>00</strong><span>Dependencias externas</span></div><div class="fact-statement">Menos incertidumbre.<br /><strong>Más control.</strong></div></div>
-
-      <section id="funciones" class="section features">
-        <div class="section-heading"><h2>La información que necesitas.<br /><span>Donde la necesitas.</span></h2><p>Mantén el foco en el combate. DRPulse pone los diminishing returns a la vista, sin recargar tu interfaz.</p></div>
-        <div class="feature-layout">
-          <article class="feature-primary"><span class="feature-symbol" aria-hidden="true">⌖</span><h3>Tu objetivo. Tu foco.<br />Todo bajo control.</h3><p>Sigue el DR en objetivo, foco y placas enemigas. Consulta el tiempo de reinicio y la reducción del próximo control.</p><div class="tracking-points"><span>Objetivo</span><span>Foco</span><span>Placas enemigas</span></div><div class="feature-watermark" aria-hidden="true">DR</div></article>
-          <div class="feature-secondary"><article><span class="feature-number">01 / LECTURA</span><h3>El próximo CC, sin dudas.</h3><p>Indicadores de 50 %, 25 % e inmunidad, con cuenta regresiva visual para los DR activos.</p></article><article><span class="feature-number">02 / PERSONALIZACIÓN</span><h3>Tu interfaz, tus reglas.</h3><p>Mueve las barras, ajusta los iconos, filtra categorías y configura hechizos personalizados con el modo de vista previa.</p></article></div>
-        </div>
-      </section>
-
-      <section id="demo" class="section demo-section">
-        <div class="demo-intro"><p class="eyebrow">CONOCE EL MECANISMO</p><h2>No gastes tu control.<br /><span>Elige el momento.</span></h2><p>Cuando repites una categoría de control, su duración disminuye. Explora la secuencia y observa qué ocurre con el siguiente CC.</p><p class="demo-disclaimer">Demo conceptual interactiva. No es una captura del addon ni una simulación de sus tiempos de reinicio.</p><div class="confidence"><span class="confidence-native">Dato nativo</span><span class="confidence-estimated">Dato estimado</span></div><p class="confidence-copy">En el addon, azul identifica información de Blizzard; gris, estimaciones con los datos disponibles.</p></div>
-        <div class="demo-panel"><div class="demo-panel-top"><span>LABORATORIO DE DR</span><span>INTERACTIVO</span></div><div class="category-tabs" role="group" aria-label="Categoría de diminishing returns"></div><div class="dr-display" aria-live="polite" aria-atomic="true"><div class="dr-ring"><div><span id="dr-value">100<span>%</span></span><small>DURACIÓN DEL PRÓXIMO CC</small></div></div><div class="dr-caption"><span id="category-label">Aturdimiento</span><strong id="dr-status">Control completo</strong></div></div><div class="dr-stages" aria-label="Secuencia de diminishing returns"><span class="active">100%</span><span>50%</span><span>25%</span><span>INMUNE</span></div><div class="demo-controls"><button class="button" id="apply-cc">Aplicar control <span aria-hidden="true">↗</span></button><button class="reset-button" id="reset-cc" aria-label="Reiniciar demostración">↺ Reiniciar</button></div></div>
-      </section>
-
-      <section class="trust-section"><div class="trust-title"><span aria-hidden="true">◈</span><h2>Información clara.<br />También cuando es estimada.</h2></div><div><p>DRPulse integra SpellDiminishUI de Blizzard y utiliza seguimiento por auras como alternativa. Distingue los datos nativos de los estimados.</p><p class="muted">Si el juego limita la información de combate, el sistema nativo sigue siendo la referencia. DRPulse respeta las restricciones de la API.</p></div></section>
-
-      <section id="instalacion" class="section installation"><div class="install-heading"><h2>Listo para tu<br /><span>próxima arena.</span></h2><p>Instala DRPulse y ajusta los indicadores a tu forma de jugar.</p><a class="text-link" href="https://legacy.curseforge.com/wow/addons/drpulse" target="_blank" rel="noopener noreferrer">Ver en CurseForge <span aria-hidden="true">↗</span></a><div class="compatibility"><span>COMPATIBILIDAD DECLARADA</span><strong>WoW: Forever</strong><p>Versión 1.60.1 · Interfaz 16001<br />Flavor: Camelot</p></div></div><div class="steps"><article><span class="step-number">01</span><div><h3>Consigue el addon</h3><p>Consulta los archivos en CurseForge y extrae el paquete de DRPulse.</p><p class="release-note">Proyecto pendiente de aprobación en CurseForge al preparar esta web. La descarga pública puede no estar disponible todavía.</p></div></article><article><span class="step-number">02</span><div><h3>Colócalo en AddOns</h3><p>Copia la carpeta <code>DRift</code> en el directorio:</p><div class="copy-field"><code>_classic_beta_/Interface/AddOns/</code><button data-copy="_classic_beta_/Interface/AddOns/" aria-label="Copiar ruta de instalación">Copiar</button></div></div></article><article><span class="step-number">03</span><div><h3>Entra y hazlo tuyo</h3><p>Reinicia WoW. Escribe <code>/drift</code> para abrir los ajustes y <code>/drift preview</code> para probar la posición de los indicadores.</p></div></article></div></section>
-
-      <section id="comandos" class="section commands"><div class="section-heading"><h2>Una línea. <span>Todo el control.</span></h2><p>Los comandos siguen usando <code>/drift</code>. Cópialos y úsalos directamente en el chat del juego.</p></div><div class="command-toolbar"><label for="command-search">Buscar comando</label><input id="command-search" type="search" placeholder="Prueba: preview, mover, historial…" autocomplete="off" /><span id="command-count" aria-live="polite">8 comandos</span></div><div class="command-list"></div><p id="command-empty" hidden>No hay coincidencias. Prueba con «ajustes», «preview» o «reset».</p><p class="command-hint">En comandos de hechizos, reemplaza <code>&lt;spellID&gt;</code> y <code>&lt;category&gt;</code> por los valores correspondientes. <code>/drift reset</code> restablece los ajustes del addon.</p></section>
-
-      <section id="preguntas" class="section faq"><h2>Antes de entrar<br /><span>en combate.</span></h2><div class="faq-items"><details><summary>¿Qué son los diminishing returns?<span aria-hidden="true">+</span></summary><p>Son reducciones sucesivas de duración al repetir controles de una misma categoría. DRPulse muestra el próximo nivel de reducción y los temporizadores de reinicio.</p></details><details><summary>¿Con qué versión es compatible?<span aria-hidden="true">+</span></summary><p>La compatibilidad declarada es World of Warcraft: Forever, versión 1.60.1, interfaz 16001, flavor Camelot. No se anuncia compatibilidad con otras versiones de WoW.</p></details><details><summary>¿Por qué algunos indicadores son grises?<span aria-hidden="true">+</span></summary><p>El gris indica datos estimados a partir de la información disponible. El azul indica datos nativos del sistema de Blizzard. La API puede restringir información del enemigo en determinadas situaciones PvP.</p></details><details><summary>¿Necesito otros addons?<span aria-hidden="true">+</span></summary><p>No. DRPulse es autónomo y no tiene dependencias externas. Puedes configurar barras, tamaños y categorías desde sus propios ajustes.</p></details><details><summary>¿Es gratuito? ¿Recoge datos?<span aria-hidden="true">+</span></summary><p>DRPulse es gratuito y tiene licencia MIT. Según la descripción del proyecto, no incorpora anuncios, telemetría ni recopilación o transmisión de información personal.</p></details><details><summary>¿Dónde puedo enviar un comentario?<span aria-hidden="true">+</span></summary><p>Usa la sección de comentarios de <a href="https://legacy.curseforge.com/wow/addons/drpulse#comments" target="_blank" rel="noopener noreferrer">CurseForge</a>. Incluye la versión del juego y los pasos para reproducir el problema.</p></details></div></section>
-
-      <section class="support"><img src="/drpulse-emblem.png" alt="" width="100" height="100" loading="lazy" /><div><h2>Hecho para la comunidad PvP.</h2><p>Un proyecto independiente de Sebiten. Tu apoyo ayuda a que DRPulse siga evolucionando.</p></div><a class="button button-outline" href="https://paypal.me/sebiten" target="_blank" rel="noopener noreferrer">Apoyar el desarrollo <span aria-hidden="true">↗</span></a></section>
-    </main>
-    <footer><a class="brand" href="#"><span>DR<span class="brand-light">PULSE</span></span></a><p>Cada control cuenta.</p><div><a href="https://legacy.curseforge.com/wow/addons/drpulse" target="_blank" rel="noopener noreferrer">CurseForge ↗</a><a href="#preguntas">Ayuda</a><a href="#instalacion">Instalación</a></div><small>Proyecto independiente. World of Warcraft es una marca de Blizzard Entertainment. Sin afiliación con Blizzard.</small></footer>
-    <div class="toast" role="status" aria-live="polite"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#101419" />
+<meta name="description" content="DRPulse: a diminishing returns tracker for WoW: Forever. Track target, focus and enemy nameplates. Features, installation and commands." />
+<meta property="og:title" content="DRPulse · Every control counts" />
+<meta property="og:description" content="Track smarter. Control better. A diminishing returns tracker for WoW: Forever." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://drpulse.glassysquid3.chatgpt.site/drpulse-emblem.png" />
+<link rel="icon" type="image/png" href="/drpulse-emblem.png" />
+<title>DRPulse · Every control counts</title>
+</head>
+<body>
+<div id="app"></div>
+<noscript><main style="max-width:700px;margin:80px auto;padding:24px;color:#ddd;background:#151a20;font-family:serif"><h1>DRPulse</h1><p>A diminishing returns tracker for WoW: Forever. Track your target, focus and enemy nameplates.</p><p>Enable JavaScript for the interactive demo, language selection, installation guide and command search.</p><a href="https://legacy.curseforge.com/wow/addons/drpulse" style="color:#8bbbef">View on CurseForge</a></main></noscript>
+<script type="module" src="/src/main.ts"></script>
+</body>
 </html>
