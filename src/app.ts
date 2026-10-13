@@ -17,7 +17,7 @@ let query = '';
 let toastTimer: ReturnType<typeof setTimeout>;
 const splitTitle = (parts: [string, string]): string => `${escape(parts[0])}<br><span>${escape(parts[1])}</span>`;
 const cfLink = (label: string, className = 'button'): string => `<a class="${className}" href="${CF}" target="_blank" rel="noopener noreferrer">${escape(label)} <span aria-hidden="true">↗</span></a>`;
-
+// asdas
 function render(): void {
   const t = translations[locale];
   document.documentElement.lang = locale;
