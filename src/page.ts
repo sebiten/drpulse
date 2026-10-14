@@ -7,10 +7,9 @@ const splitTitle = (parts: [string, string]): string => `${escape(parts[0])}<br>
 const cfLink = (label: string, className = 'button'): string => `<a class="${className}" href="${CF}" target="_blank" rel="noopener noreferrer">${escape(label)} <span aria-hidden="true">↗</span></a>`;
 const spellIcons = ['spell_holy_sealofmight', 'spell_nature_polymorph', 'spell_shadow_possession', 'spell_frost_frostnova', 'spell_shadow_impphaseshift', 'ability_warrior_disarm', 'ability_warrior_challange', 'spell_shaman_thunderstorm'];
 const screenshots = [
-  { src: '/screenshots/drpulse-preview.png', width: 705, height: 809 },
-  { src: '/screenshots/drpulse-settings.png', width: 708, height: 699 },
-  { src: '/screenshots/drpulse-history.png', width: 1205, height: 660 },
-  { src: '/screenshots/drpulse-target-focus.png', width: 477, height: 250 },
+  { src: '/screenshots/drpulse-settings.png', width: 660, height: 568 },
+  { src: '/screenshots/drpulse-target-focus.png', width: 477, height: 278 },
+  { src: '/screenshots/drpulse-history.png', width: 509, height: 404 },
 ] as const;
 export const icon = (index: number, className = 'spell-icon'): string => `<img class="${className}" src="/icons/${spellIcons[index]}.jpg" alt="" width="56" height="56" loading="lazy">`;
 
