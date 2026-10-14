@@ -9,6 +9,7 @@ const spellIcons = ['spell_holy_sealofmight', 'spell_nature_polymorph', 'spell_s
 const screenshots = [
   { src: '/screenshots/drpulse-settings.png', width: 660, height: 568 },
   { src: '/screenshots/drpulse-target-focus.png', width: 477, height: 278 },
+  { src: '/screenshots/drpulse-nameplate.png', width: 292, height: 214 },
   { src: '/screenshots/drpulse-history.png', width: 509, height: 404 },
 ] as const;
 export const icon = (index: number, className = 'spell-icon'): string => `<img class="${className}" src="/icons/${spellIcons[index]}.jpg" alt="" width="56" height="56" loading="lazy">`;
