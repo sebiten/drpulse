@@ -2,7 +2,6 @@ import { languages, translations, type Locale } from './locales';
 import { renderPage, commandValues, icon } from './page';
 import { seo, localePath } from './seo';
 
-const escape = (text: string): string => text.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
 const get = <T extends HTMLElement>(selector: string): T => {
   const element = document.querySelector<T>(selector);
   if (!element) throw new Error(`Missing element: ${selector}`);
@@ -11,8 +10,6 @@ const get = <T extends HTMLElement>(selector: string): T => {
 const isLocale = (value: string | null): value is Locale => value !== null && Object.hasOwn(languages, value);
 const pathLocale = window.location.pathname.split('/')[1];
 const locale: Locale = isLocale(pathLocale) ? pathLocale : 'en';
-let category = 0;
-let stage = 0;
 let query = '';
 let toastTimer: ReturnType<typeof setTimeout>;
 function render(): void {
@@ -21,24 +18,9 @@ function render(): void {
   document.querySelector<HTMLMetaElement>('meta[name="description"]')!.content = seo[locale].description;
   document.querySelector<HTMLMetaElement>('meta[property="og:title"]')!.content = seo[locale].title;
   document.querySelector<HTMLMetaElement>('meta[property="og:description"]')!.content = seo[locale].description;
-  if (!get('#app').hasChildNodes()) get('#app').innerHTML = renderPage(locale, category, query);
-  renderDemo();
+  if (!get('#app').hasChildNodes()) get('#app').innerHTML = renderPage(locale, query);
   filterCommands();
-  document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((button, i) => button.insertAdjacentHTML('afterbegin', icon(i)));
   document.querySelectorAll<HTMLElement>('.feature-secondary article').forEach((article, i) => article.insertAdjacentHTML('afterbegin', `<div class="feature-spells" aria-hidden="true">${icon(i === 0 ? 0 : 3)}${icon(i === 0 ? 1 : 4)}${icon(i === 0 ? 2 : 5)}</div>`));
-}
-function renderDemo(): void {
-  const t = translations[locale];
-  get('#dr-value').innerHTML = stage === 3 ? escape(t.immune) : `${[100, 50, 25][stage]}<span>%</span>`;
-  get('#dr-value').classList.toggle('immune', stage === 3);
-  get('#category-label').textContent = t.categories[category];
-  get('#dr-status').textContent = t.states[stage];
-  get('.dr-ring').style.setProperty('--arc', `${[100, 50, 25, 0][stage]}%`);
-  document.querySelectorAll('.dr-stages span').forEach((element, i) => element.classList.toggle('active', i === stage));
-  document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((button, i) => button.setAttribute('aria-pressed', String(i === category)));
-  const apply = get<HTMLButtonElement>('#apply-cc');
-  apply.disabled = stage === 3;
-  apply.textContent = stage === 3 ? t.immune : `${t.apply} ↗`;
 }
 const normalize = (value: string): string => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 function filterCommands(): void {
@@ -73,18 +55,6 @@ document.addEventListener('click', async event => {
     get('#navigation').classList.toggle('open', open);
   }
   if (target.closest('#navigation a')) closeMenu();
-  const loadoutButton = target.closest<HTMLButtonElement>('[data-loadout]');
-  if (loadoutButton) {
-    category = Number(loadoutButton.dataset.loadout);
-    stage = 0;
-    renderDemo();
-    get('#demo').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
-    get<HTMLButtonElement>(`[data-category="${category}"]`).focus({ preventScroll: true });
-  }
-  const categoryButton = target.closest<HTMLButtonElement>('[data-category]');
-  if (categoryButton) { category = Number(categoryButton.dataset.category); stage = 0; renderDemo(); }
-  if (target.closest('#apply-cc')) { stage = Math.min(stage + 1, 3); renderDemo(); }
-  if (target.closest('#reset-cc')) { stage = 0; renderDemo(); }
   const copyButton = target.closest<HTMLButtonElement>('[data-copy]');
   if (copyButton?.dataset.copy) {
     let success = true;
