@@ -1,7 +1,7 @@
 import { languages, translations, type Locale } from './locales';
 
 const CF = 'https://legacy.curseforge.com/wow/addons/drpulse';
-const commandValues = ['/drift', '/drift unlock', '/drift lock', '/drift preview', '/drift history', '/drift add <spellID> <category>', '/drift remove <spellID>', '/drift reset'];
+const commandValues = ['/drpulse', '/drpulse unlock', '/drpulse lock', '/drpulse preview', '/drpulse history', '/drpulse add <spellID> <category>', '/drpulse remove <spellID>', '/drpulse reset'];
 const escape = (text: string): string => text.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
 const get = <T extends HTMLElement>(selector: string): T => {
   const element = document.querySelector<T>(selector);
@@ -17,7 +17,8 @@ let query = '';
 let toastTimer: ReturnType<typeof setTimeout>;
 const splitTitle = (parts: [string, string]): string => `${escape(parts[0])}<br><span>${escape(parts[1])}</span>`;
 const cfLink = (label: string, className = 'button'): string => `<a class="${className}" href="${CF}" target="_blank" rel="noopener noreferrer">${escape(label)} <span aria-hidden="true">↗</span></a>`;
-// asdas
+const spellIcons = ['spell_holy_sealofmight', 'spell_nature_polymorph', 'spell_shadow_possession', 'spell_frost_frostnova', 'spell_shadow_impphaseshift', 'ability_warrior_disarm', 'ability_warrior_challange', 'spell_shaman_thunderstorm'];
+const icon = (index: number, className = 'spell-icon'): string => `<img class="${className}" src="/icons/${spellIcons[index]}.jpg" alt="" width="56" height="56" loading="lazy">`;
 function render(): void {
   const t = translations[locale];
   document.documentElement.lang = locale;
@@ -37,6 +38,7 @@ function render(): void {
       <section class="hero" aria-labelledby="hero-title"><div class="hero-art" aria-hidden="true"></div><span class="frame-corner tl" aria-hidden="true"></span><span class="frame-corner tr" aria-hidden="true"></span><span class="frame-corner bl" aria-hidden="true"></span><span class="frame-corner br" aria-hidden="true"></span>
         <div class="hero-content"><p class="eyebrow">${escape(t.kicker)}</p><h1 id="hero-title">${splitTitle(t.hero)}</h1><p class="hero-description">${escape(t.intro)}</p><div class="hero-actions">${cfLink(t.visit)}<a class="text-link" href="#demo"><span class="play" aria-hidden="true">▷</span>${escape(t.explore)}</a></div></div>
         <div class="hero-emblem"><img src="/drpulse-emblem.png" alt="DRPulse" width="1254" height="1254" fetchpriority="high"></div>
+        <div class="hero-loadout"><span>${escape(t.facts[0])}</span><div class="action-bar" role="group" aria-label="${escape(t.explore)}">${t.categories.map((name, i) => `<button data-loadout="${i}" title="${escape(name)}" aria-label="${escape(name)}">${icon(i)}<span class="spell-tooltip">${escape(name)}</span></button>`).join('')}</div><a href="#demo">${escape(t.explore)} <span aria-hidden="true">↗</span></a></div>
         <div class="hero-bottom"><span>WORLD OF WARCRAFT: FOREVER</span><span>${escape(t.arena)}</span></div>
       </section>
       <div class="facts">${t.facts.map((label, i) => `<div><strong>${['08', '03', '00'][i]}</strong><span>${escape(label)}</span></div>`).join('')}<div class="fact-statement">${escape(t.motto)}</div></div>
@@ -50,6 +52,8 @@ function render(): void {
     </main><footer><a class="brand" href="#"><span>DR<span class="brand-light">PULSE</span></span></a><p>${escape(t.motto)}</p><div><a href="${CF}" target="_blank" rel="noopener noreferrer">CurseForge ↗</a><a href="#preguntas">${escape(t.help)}</a><a href="#instalacion">${escape(t.nav[2])}</a></div><small>${escape(t.legal)}</small></footer><div class="window-status"><span>DRPulse</span><span>WoW: Forever 1.60.1</span><span>Interface 16001</span></div></div><div class="toast" role="status" aria-live="polite"></div>`;
   renderDemo();
   filterCommands();
+  document.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((button, i) => button.insertAdjacentHTML('afterbegin', icon(i)));
+  document.querySelectorAll<HTMLElement>('.feature-secondary article').forEach((article, i) => article.insertAdjacentHTML('afterbegin', `<div class="feature-spells" aria-hidden="true">${icon(i === 0 ? 0 : 3)}${icon(i === 0 ? 1 : 4)}${icon(i === 0 ? 2 : 5)}</div>`));
 }
 function renderDemo(): void {
   const t = translations[locale];
@@ -101,6 +105,14 @@ document.addEventListener('click', async event => {
     get('#navigation').classList.toggle('open', open);
   }
   if (target.closest('#navigation a')) closeMenu();
+  const loadoutButton = target.closest<HTMLButtonElement>('[data-loadout]');
+  if (loadoutButton) {
+    category = Number(loadoutButton.dataset.loadout);
+    stage = 0;
+    renderDemo();
+    get('#demo').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
+    get<HTMLButtonElement>(`[data-category="${category}"]`).focus({ preventScroll: true });
+  }
   const categoryButton = target.closest<HTMLButtonElement>('[data-category]');
   if (categoryButton) { category = Number(categoryButton.dataset.category); stage = 0; renderDemo(); }
   if (target.closest('#apply-cc')) { stage = Math.min(stage + 1, 3); renderDemo(); }
@@ -120,3 +132,4 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && get('.menu-toggle').getAttribute('aria-expanded') === 'true') { closeMenu(); get('.menu-toggle').focus(); }
 });
 render();
+
