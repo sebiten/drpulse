@@ -9,7 +9,7 @@ nav { margin-left:auto; gap:26px; }nav a { font-size:12px; color:#b5c0ce; }nav a
 .language-control>span { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
 .language-control select { border:1px solid #566a7d70; background:#172330; color:#dce6f0; border-radius:5px; height:40px; padding:0 10px; font:12px Manrope,sans-serif; width:112px; cursor:pointer; }
 .hero { height:650px; min-height:600px; max-height:750px; padding:55px 6% 150px; align-items:center; }
-.hero-art { opacity:1; background:linear-gradient(90deg,#0d131bf0,#0d131b99 43%,#0d131b24 80%),linear-gradient(0deg,#0d131b,transparent 55%),url('/arena.png') center/cover; }
+.hero-art { opacity:1; background:linear-gradient(90deg,#0d131bf0,#0d131b99 43%,#0d131b24 80%),linear-gradient(0deg,#0d131b,transparent 55%),url('/arena-1440.webp') center/cover; }
 .hero-content { width:69%; }.eyebrow { font:10px Consolas,monospace; color:#b2cbe1; letter-spacing:2px; margin-bottom:23px; }
 h1 { font:600 clamp(66px,6.4vw,94px)/.99 'Barlow Condensed',sans-serif; letter-spacing:-1px; color:#f0f3f6; text-shadow:0 3px 18px #0007; margin-bottom:25px; }
 h1 span { color:#aacbe8; }html[lang=de] h1 { font-size:clamp(57px,5.7vw,82px); }
@@ -119,4 +119,15 @@ footer { padding:30px 0;border-top:1px solid #7e99ad30;background:none; }footer>
 .language-control select {
   margin: 0;
   height: 40px;
+}
+
+.alternative { border-bottom:1px solid var(--border); }
+.alternative h2 { max-width:900px; margin-bottom:24px; }
+.alternative p { max-width:850px; margin-bottom:16px; color:var(--muted); line-height:1.8; }
+.alternative .muted { font-size:12px; }
+.language-links { display:flex; flex-wrap:wrap; gap:16px; grid-column:1/-1; }
+.language-links a[aria-current=page] { color:#edf2f7; text-decoration:underline; text-underline-offset:4px; }
+@media(max-width:767px) {
+  .hero-art { background-image:linear-gradient(90deg,#0d131bf0,#0d131b99 43%,#0d131b24 80%),linear-gradient(0deg,#0d131b,transparent 55%),url('/arena-768.webp'); }
+  .alternative p { font-size:13px; }
 }
