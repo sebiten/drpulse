@@ -8,7 +8,7 @@ for (const locale of ['en', 'es', 'de', 'fr', 'pt']) {
   assert.ok(html.includes(`<html lang="${locale}">`));
   assert.equal((html.match(/<h1\b/g) || []).length, 1);
   assert.equal((html.match(/rel="canonical"/g) || []).length, 1);
-  assert.ok(html.includes(`rel="canonical" href="https://drpulse.glassysquid3.chatgpt.site/${path}"`));
+  assert.ok(html.includes(`rel="canonical" href="https://www.drpulse.dev/${path}"`));
   assert.equal((html.match(/rel="alternate" hreflang=/g) || []).length, 6);
   assert.ok(html.includes('Diminish DR Tracker') && html.includes('id="instalacion"'));
   assert.ok(!html.includes('/arena.png') && !html.includes('/drpulse-emblem.png'));

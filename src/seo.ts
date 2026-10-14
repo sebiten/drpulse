@@ -1,6 +1,6 @@
 import { languages, type Locale } from './locales';
 
-export const siteUrl = 'https://drpulse.glassysquid3.chatgpt.site';
+export const siteUrl = 'https://www.drpulse.dev';
 export const localePath = (locale: Locale): string => locale === 'en' ? '/' : `/${locale}/`;
 export const localeKeys = Object.keys(languages) as Locale[];
 export const escapeHtml = (text: string): string => text.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
