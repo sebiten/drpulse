@@ -10,10 +10,7 @@ const screenshots = [
   { src: '/screenshots/drpulse-v2-appearance.png', width: 757, height: 618 },
   { src: '/screenshots/drpulse-v2-general.png', width: 763, height: 621 },
   { src: '/screenshots/drpulse-v2-target-preview.png', width: 324, height: 178 },
-  { src: '/screenshots/drpulse-nameplate-active.png', width: 278, height: 227 },
   { src: '/screenshots/drpulse-nameplate-reset.png', width: 369, height: 193 },
-  { src: '/screenshots/drpulse-timer-single.png', width: 192, height: 92 },
-  { src: '/screenshots/drpulse-timers-multiple.png', width: 223, height: 84 },
 ] as const;
 export const icon = (index: number, className = 'spell-icon'): string => `<img class="${className}" src="/icons/${spellIcons[index]}.jpg" alt="" width="56" height="56" loading="lazy">`;
 
