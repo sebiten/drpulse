@@ -1,6 +1,6 @@
 import { languages, translations, type Locale } from './locales';
 import { seo, localePath } from './seo';
-const CF = 'https://legacy.curseforge.com/wow/addons/drpulse';
+const CF = 'https://curseforge.com/wow/addons/drpulse';
 export const commandValues = ['/drpulse', '/drpulse unlock', '/drpulse lock', '/drpulse preview', '/drpulse history', '/drpulse add <spellID> <category>', '/drpulse remove <spellID>', '/drpulse reset'];
 const escape = (text: string): string => text.replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
 const splitTitle = (parts: [string, string]): string => `${escape(parts[0])}<br><span>${escape(parts[1])}</span>`;

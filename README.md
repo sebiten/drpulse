@@ -23,7 +23,7 @@ Comprobar el HTML de los cinco idiomas después de compilar con `node --experime
 
 ## Contenido
 
-- Descripción y compatibilidad contrastadas con https://legacy.curseforge.com/wow/addons/drpulse el 13 de octubre de 2026. Comandos actualizados a `/drpulse` por indicación del autor; esta web no modifica el código Lua del addon.
+- Descripción y compatibilidad contrastadas con https://curseforge.com/wow/addons/drpulse el 13 de octubre de 2026. Comandos actualizados a `/drpulse` por indicación del autor; esta web no modifica el código Lua del addon.
 - CurseForge indicaba que el proyecto estaba pendiente de aprobación. Actualizar el aviso de instalación cuando se publique.
 - La demo de DR es conceptual y no representa la interfaz ni los temporizadores reales del addon.
 - Emblema original proporcionado por el autor, sin modificar el archivo.
