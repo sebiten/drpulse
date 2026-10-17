@@ -35,7 +35,6 @@ Comprobar el HTML de los cinco idiomas después de compilar con `node --experime
 
 La barra de habilidades de la portada abre la categoría correspondiente en la demo. Las traducciones están centralizadas y tipadas en `src/locales.ts`.
 
-`public/arena.png`: ilustración creada con la herramienta integrada image_gen. Prompt: arena circular de piedra de fantasía oscura, pilares góticos a la derecha, montañas y niebla azul acero, espacio negativo oscuro a la izquierda, sin personajes, texto, logotipos ni interfaz. Ilustración ambiental, no captura del juego.
 
 ## Verificación
 

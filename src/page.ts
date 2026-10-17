@@ -7,6 +7,9 @@ const splitTitle = (parts: [string, string]): string => `${escape(parts[0])}<br>
 const cfLink = (label: string, className = 'button'): string => `<a class="${className}" href="${CF}" target="_blank" rel="noopener noreferrer">${escape(label)} <span aria-hidden="true">↗</span></a>`;
 const spellIcons = ['spell_holy_sealofmight', 'spell_nature_polymorph', 'spell_shadow_possession', 'spell_frost_frostnova', 'spell_shadow_impphaseshift', 'ability_warrior_disarm', 'ability_warrior_challange', 'spell_shaman_thunderstorm'];
 const screenshots = [
+  { src: '/screenshots/drpulse-v2-appearance.png', width: 757, height: 618 },
+  { src: '/screenshots/drpulse-v2-general.png', width: 763, height: 621 },
+  { src: '/screenshots/drpulse-v2-target-preview.png', width: 324, height: 178 },
   { src: '/screenshots/drpulse-nameplate-active.png', width: 278, height: 227 },
   { src: '/screenshots/drpulse-nameplate-reset.png', width: 369, height: 193 },
   { src: '/screenshots/drpulse-timer-single.png', width: 192, height: 92 },
