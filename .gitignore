@@ -1,3 +1,5 @@
 node_modules/
 dist/
 *.tar.gz
+.playwright-cli/
+output/playwright/

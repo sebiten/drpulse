@@ -1,0 +1,72 @@
+import type { Locale } from './locales';
+
+interface GuideCopy {
+  title: [string, string]; intro: string; label: string; target: string;
+  states: [string, string, string]; descriptions: [string, string, string];
+  next: string; normal: string; example: string; category: string;
+  timerTitle: string; timerBody: string; remaining: string; ready: string; reset: string;
+  play: string; pause: string; resume: string; replay: string; hint: string;
+}
+
+export const guideCopy: Record<Locale, GuideCopy> = {
+  es: {
+    title: ['El color anticipa.', 'El tiempo decide.'],
+    intro: 'Los segmentos de cada icono indican la duración de tu próximo control. El número te dice cuándo vuelve a estar disponible al completo.',
+    label: 'Así se lee DRPulse', target: 'Objetivo',
+    states: ['1 segmento amarillo', '2 segmentos naranjas', '3 segmentos rojos: inmunidad'],
+    descriptions: ['Tu próximo control de esta categoría dura la mitad de lo normal.', 'Tu próximo control de esta categoría dura una cuarta parte de lo normal.', 'El objetivo es inmune a los controles de esta categoría hasta que se reinicie el DR.'],
+    next: 'Próximo control', normal: 'Duración normal', example: 'Ejemplo con un control de 8 segundos.',
+    category: 'El DR se sigue por categoría: la inmunidad a una no implica inmunidad a todas.',
+    timerTitle: 'La cuenta atrás es del DR.', timerBody: 'El número muestra los segundos restantes hasta que se reinicie esa categoría. No es la duración del próximo control. Al llegar a cero, recupera su duración normal.',
+    remaining: 'Hasta el reinicio', ready: 'Duración completa', reset: 'DR reiniciado. El próximo control vuelve al 100 %.',
+    play: 'Ver el reinicio', pause: 'Pausar', resume: 'Continuar', replay: 'Repetir', hint: 'Ejemplo animado · tiempos ilustrativos',
+  },
+  en: {
+    title: ['Read the color.', 'Time your control.'],
+    intro: 'The segments on each icon show how long your next control will last. The number tells you when its full duration returns.',
+    label: 'Reading DRPulse', target: 'Target',
+    states: ['1 yellow segment', '2 orange segments', '3 red segments: immunity'],
+    descriptions: ['Your next control in this category lasts half its normal duration.', 'Your next control in this category lasts a quarter of its normal duration.', 'The target is immune to controls in this category until DR resets.'],
+    next: 'Next control', normal: 'Normal duration', example: 'Example using an 8-second control.',
+    category: 'DR is tracked per category: immunity to one does not mean immunity to all.',
+    timerTitle: 'The countdown is for DR.', timerBody: 'The number shows the seconds remaining until that category resets. It is not the duration of your next control. At zero, its normal duration returns.',
+    remaining: 'Until reset', ready: 'Full duration', reset: 'DR reset. Your next control returns to 100%.',
+    play: 'Watch the reset', pause: 'Pause', resume: 'Resume', replay: 'Replay', hint: 'Animated example · illustrative timings',
+  },
+  de: {
+    title: ['Die Farbe zeigt es.', 'Das Timing entscheidet.'],
+    intro: 'Die Segmente am Symbol zeigen die Dauer deines nächsten Kontrolleffekts. Die Zahl zeigt, wann die volle Dauer zurückkehrt.',
+    label: 'DRPulse richtig lesen', target: 'Ziel',
+    states: ['1 gelbes Segment', '2 orange Segmente', '3 rote Segmente: Immunität'],
+    descriptions: ['Dein nächster Kontrolleffekt dieser Kategorie hält halb so lange wie normal.', 'Dein nächster Kontrolleffekt dieser Kategorie hält ein Viertel der normalen Dauer.', 'Das Ziel ist gegen Kontrolleffekte dieser Kategorie immun, bis DR zurückgesetzt wird.'],
+    next: 'Nächster Kontrolleffekt', normal: 'Normale Dauer', example: 'Beispiel mit einem Kontrolleffekt von 8 Sekunden.',
+    category: 'DR gilt pro Kategorie: Immunität gegen eine bedeutet nicht Immunität gegen alle.',
+    timerTitle: 'Der Countdown gilt für DR.', timerBody: 'Die Zahl zeigt die Sekunden bis zum Zurücksetzen dieser Kategorie, nicht die Dauer des nächsten Kontrolleffekts. Bei null gilt wieder die normale Dauer.',
+    remaining: 'Bis zum Zurücksetzen', ready: 'Volle Dauer', reset: 'DR zurückgesetzt. Dein nächster Kontrolleffekt hat wieder 100 % Dauer.',
+    play: 'Zurücksetzen ansehen', pause: 'Pause', resume: 'Fortsetzen', replay: 'Wiederholen', hint: 'Animiertes Beispiel · illustrative Zeiten',
+  },
+  fr: {
+    title: ['La couleur renseigne.', 'Le timing décide.'],
+    intro: 'Les segments de chaque icône indiquent la durée de ton prochain contrôle. Le nombre indique quand sa durée complète revient.',
+    label: 'Lire DRPulse', target: 'Cible',
+    states: ['1 segment jaune', '2 segments orange', '3 segments rouges : immunité'],
+    descriptions: ['Ton prochain contrôle de cette catégorie dure la moitié de sa durée normale.', 'Ton prochain contrôle de cette catégorie dure un quart de sa durée normale.', 'La cible est immunisée aux contrôles de cette catégorie jusqu’à la réinitialisation des DR.'],
+    next: 'Prochain contrôle', normal: 'Durée normale', example: 'Exemple avec un contrôle de 8 secondes.',
+    category: 'Les DR sont suivis par catégorie : une immunité ne concerne pas toutes les catégories.',
+    timerTitle: 'Le compte à rebours concerne les DR.', timerBody: 'Le nombre indique les secondes avant la réinitialisation de cette catégorie, pas la durée du prochain contrôle. À zéro, sa durée normale revient.',
+    remaining: 'Avant réinitialisation', ready: 'Durée complète', reset: 'DR réinitialisés. Ton prochain contrôle retrouve 100 % de sa durée.',
+    play: 'Voir la réinitialisation', pause: 'Pause', resume: 'Continuer', replay: 'Revoir', hint: 'Exemple animé · durées illustratives',
+  },
+  pt: {
+    title: ['A cor indica.', 'O tempo decide.'],
+    intro: 'Os segmentos de cada ícone indicam a duração do seu próximo controle. O número mostra quando a duração completa volta.',
+    label: 'Como ler o DRPulse', target: 'Alvo',
+    states: ['1 segmento amarelo', '2 segmentos laranja', '3 segmentos vermelhos: imunidade'],
+    descriptions: ['Seu próximo controle desta categoria dura metade do normal.', 'Seu próximo controle desta categoria dura um quarto do normal.', 'O alvo fica imune a controles desta categoria até o DR reiniciar.'],
+    next: 'Próximo controle', normal: 'Duração normal', example: 'Exemplo com um controle de 8 segundos.',
+    category: 'O DR é acompanhado por categoria: imunidade a uma não significa imunidade a todas.',
+    timerTitle: 'A contagem regressiva é do DR.', timerBody: 'O número mostra os segundos até esta categoria reiniciar, não a duração do próximo controle. Ao chegar a zero, a duração normal volta.',
+    remaining: 'Até o reinício', ready: 'Duração completa', reset: 'DR reiniciado. Seu próximo controle volta a 100%.',
+    play: 'Ver o reinício', pause: 'Pausar', resume: 'Continuar', replay: 'Repetir', hint: 'Exemplo animado · tempos ilustrativos',
+  },
+};
