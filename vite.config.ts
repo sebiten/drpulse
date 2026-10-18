@@ -15,7 +15,7 @@ export default defineConfig({
     transformIndexHtml: {
       order: 'pre',
       handler(html, context) {
-        const segment = context.path.split('/')[1];
+        const segment = (context.originalUrl ?? context.path).split(/[/?#]/)[1];
         const locale = localeKeys.find(key => key === segment) ?? 'en';
         return localize(html, locale);
       },

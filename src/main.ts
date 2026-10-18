@@ -5,6 +5,5 @@ import '@fontsource/manrope/latin-500.css';
 import '@fontsource/manrope/latin-600.css';
 import '@fontsource/manrope/latin-700.css';
 import './style.css';
-import './retro.css';
 import './dr-guide.css';
 import './app';

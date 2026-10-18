@@ -55,7 +55,7 @@ document.addEventListener('click', async event => {
     button.setAttribute('aria-expanded', String(open));
     get('#navigation').classList.toggle('open', open);
   }
-  if (target.closest('#navigation a')) closeMenu();
+  if (target.closest('#navigation a') || !target.closest('.site-header')) closeMenu();
   const copyButton = target.closest<HTMLButtonElement>('[data-copy]');
   if (copyButton?.dataset.copy) {
     let success = true;
