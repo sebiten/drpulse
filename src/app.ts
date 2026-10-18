@@ -71,5 +71,5 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && get('.menu-toggle').getAttribute('aria-expanded') === 'true') { closeMenu(); get('.menu-toggle').focus(); }
 });
 render();
-initDrGuide(locale);
+initDrGuide();
 
