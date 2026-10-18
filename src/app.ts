@@ -2,6 +2,7 @@ import { languages, translations, type Locale } from './locales';
 import { renderPage, commandValues, icon } from './page';
 import { seo, localePath } from './seo';
 import { initDrGuide } from './dr-guide';
+import { initGallery } from './gallery';
 
 const get = <T extends HTMLElement>(selector: string): T => {
   const element = document.querySelector<T>(selector);
@@ -72,4 +73,5 @@ document.addEventListener('keydown', event => {
 });
 render();
 initDrGuide();
+initGallery();
 
