@@ -153,6 +153,19 @@ h1 span { color: var(--blue); }
 .faq details[open] summary > span { transform: rotate(45deg); }
 .faq details p { margin: 0 24px 26px 0; font-size: 17px; max-width: 60ch; }
 .faq details p a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
+.shardot { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr); gap: clamp(42px, 7vw, 96px); align-items: center; border-top: 1px solid var(--border); }
+.shardot-copy { max-width: 500px; }
+.shardot-copy h2 { margin-bottom: 24px; }
+.shardot-copy > p:not(.eyebrow) { max-width: 44ch; font-size: 17px; }
+.shardot-resources { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 32px; }
+.shardot-resources span { padding: 8px 11px; border: 1px solid #464e5980; color: #b5bbc4; background: #171a1f; font-size: 12px; line-height: 1.4; }
+.shardot-visuals { position: relative; min-height: 480px; }
+.shardot-shot { position: absolute; display: block; overflow: hidden; border: 1px solid #68717e; background: #101215; box-shadow: 0 22px 55px #0008; transition: border-color .25s ease, transform .35s var(--ease), box-shadow .35s var(--ease); }
+.shardot-shot::after { content: ''; position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 1px #e7e9ec24; }
+.shardot-shot img { display: block; width: 100%; height: auto; }
+.shardot-shot-dots { top: 0; left: 0; width: min(82%, 536px); transform: rotate(-1deg); }
+.shardot-shot-shards { right: 0; bottom: 0; width: min(72%, 500px); transform: rotate(1deg); }
+.shardot-shot:hover, .shardot-shot:focus-visible { z-index: 2; border-color: var(--blue); box-shadow: 0 26px 68px #000a, 0 0 0 1px #79a9d540; transform: translateY(-5px) rotate(0); }
 .support { display: flex; align-items: center; gap: 28px; padding: 34px; margin-bottom: 72px; border: 1px solid #86b5df38; border-radius: 3px; background: linear-gradient(110deg, #242a32, #171a1f); box-shadow: inset 0 1px #e7e9ec0a; }
 .support img { width: 72px; height: 72px; border-radius: 50%; }
 .support h2 { font-size: 26px; letter-spacing: -.6px; margin-bottom: 10px; }
@@ -232,10 +245,18 @@ footer { padding-block: 40px; }
 @media (max-width: 1000px) {
   .alternative { grid-template-columns: 1fr; gap: 24px; }
   .alternative h2 { max-width: 26ch; }
+  .shardot { grid-template-columns: 1fr; }
+  .shardot-copy { max-width: 620px; }
+  .shardot-visuals { min-height: 500px; }
 }
 @media (max-width: 700px) {
   .feature-primary h3 { font-size: 30px; }
   .facts strong { font-size: 38px; }
+  .shardot { gap: 36px; }
+  .shardot-copy > p:not(.eyebrow) { font-size: 16px; }
+  .shardot-copy .button { width: 100%; }
+  .shardot-visuals { display: grid; gap: 14px; min-height: 0; }
+  .shardot-shot { position: relative; inset: auto; width: 100%; transform: none; box-shadow: 0 14px 30px #0006; }
 }
 @media (max-width: 1150px) {
   .site-header { gap: 16px; }
