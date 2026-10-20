@@ -293,54 +293,79 @@ footer { padding-block: 40px; }
 }
 
 @media (max-width: 700px) {
-  html { scroll-padding-top: 92px; }
-  .site-header { min-height: 72px; padding: 12px 18px; gap: 12px; }
-  .brand { font-size: 25px; gap: 8px; }
-  .brand img { width: 34px; height: 34px; }
-  .header-controls { gap: 8px; }
-  .language-control select { width: 108px; padding-inline: 8px; }
-  .menu-toggle { gap: 6px; padding-inline: 10px; }
-  .menu-toggle span { display: none; }
-  .hero { grid-template-columns: minmax(0, 1fr); padding-top: 44px; gap: 0; }
-  .hero-content { padding-bottom: 34px; }
-  .eyebrow { max-width: 32ch; font-size: 13px; letter-spacing: 1px; margin-bottom: 22px; }
-  h1 { font-size: clamp(45px, 9.5vw, 64px); letter-spacing: -.6px; }
-  .hero-description { font-size: 18px; max-width: 42ch; }
-  .hero-emblem { padding: 0 0 34px; width: 100%; }
-  .hero-emblem img { width: 200px; }
+  :root { --gutter: 20px; }
+  html { scroll-padding-top: 80px; }
+  p { font-size: 16px; line-height: 1.7; }
+  .site-header { min-height: 64px; padding: 10px 16px; gap: 10px; }
+  .brand { font-size: 24px; gap: 6px; }
+  .brand img { width: 28px; height: 28px; }
+  .header-controls { gap: 6px; }
+  .language-control select { width: 96px; padding-inline: 6px; font-size: 13px; }
+  .menu-toggle { width: 44px; gap: 0; padding: 0; font-size: 0; }
+  .menu-toggle span { display: inline; font-size: 21px; }
+  nav { padding: 8px 16px 16px; max-height: calc(100dvh - 64px); }
+  nav a { min-height: 48px; border-bottom: 1px solid var(--border); }
+  .hero { grid-template-columns: minmax(0, 1fr); padding-top: 24px; gap: 0; }
+  .hero-content { padding-bottom: 24px; }
+  .eyebrow { max-width: none; font-size: 10px; letter-spacing: 1.2px; margin-bottom: 16px; }
+  h1 { font-size: clamp(42px, 11vw, 60px); letter-spacing: -.6px; margin-bottom: 20px; }
+  .hero-description { font-size: 16px; line-height: 1.7; max-width: 42ch; margin-bottom: 24px; }
+  .hero-emblem { grid-row: 1; justify-items: start; padding: 0 0 18px; width: 100%; }
+  .hero-emblem img { width: 84px; }
 
 
-  .hero-actions { gap: 12px 24px; }
-  .hero-bottom { font-size: 12px; gap: 8px; padding-block: 20px; }
+  .hero-actions { display: grid; gap: 8px; }
+  .hero-actions .button { width: 100%; }
+  .hero-actions .text-link { justify-content: center; font-size: 14px; }
+  .hero-bottom { font-size: 10px; gap: 4px; padding-block: 16px; letter-spacing: .4px; }
   .hero-bottom > span { width: 100%; }
-  .facts { gap: 18px 14px; padding-block: 26px; }
+  .facts { gap: 16px 10px; padding-block: 24px; }
   .facts > div { display: block; padding: 0 12px 0 0; }
   .facts strong { display: block; font-size: 36px; margin-bottom: 8px; }
-  .facts span { font-size: 14px; }
-  .facts .fact-statement { padding: 0; font-size: 14px; }
-  .section { padding-block: 58px; }
-  h2 { font-size: 36px; letter-spacing: -.8px; }
-  .section-heading { margin-bottom: 28px; }
-  .feature-primary, .feature-secondary article { padding: 26px; }
+  .facts span { display: block; font-size: 11px; line-height: 1.5; }
+  .facts .fact-statement { padding: 0; font-size: 12px; }
+  .section { padding-block: 44px; }
+  h2 { font-size: 32px; letter-spacing: -.5px; margin-bottom: 18px; }
+  .section-heading { margin-bottom: 24px; }
+  .alternative { gap: 20px; }
+  .alternative .muted { font-size: 12px; }
+  .feature-primary, .feature-secondary article { padding: 22px; }
   .feature-primary h3 { font-size: 25px; }
   .feature-secondary { grid-template-columns: 1fr; }
-  .tracking-points { gap: 12px 18px; }
-  .showcase { padding: 28px 18px; }
-  .screenshot-grid { grid-template-columns: 1fr; gap: 28px; }
+  .tracking-points { gap: 10px; margin-top: 22px; }
+  .tracking-points span { font-size: 12px; }
+  .feature-symbol { margin-bottom: 16px; font-size: 30px; }
+  .showcase { padding: 32px 0; border-inline: 0; border-radius: 0; background: transparent; box-shadow: none; }
+  .showcase-heading { margin-bottom: 24px; }
+  .screenshot-grid { grid-template-columns: 1fr; gap: 24px; }
   .screenshot-3 .screenshot-frame, .screenshot-4 .screenshot-frame { min-height: 0; }
   .screenshot-frame { padding: 5px; }
-  .console-panel { padding: 0 16px 16px; }
+  .console-panel { padding: 0; border: 0; background: transparent; box-shadow: none; }
+  .panel-rail { padding-block: 14px; margin-bottom: 18px; }
   .command-toolbar { flex-direction: column; align-items: stretch; gap: 12px; }
-  .command-row { padding: 16px; align-items: flex-start; flex-wrap: wrap; gap: 12px; }
-  .command-row > div { flex: 1 1 190px; }
-  .faq summary { font-size: 17px; }
-  .support { gap: 20px; padding: 26px; margin-bottom: 48px; }
-  .support img { width: 56px; height: 56px; }
-  .support > div { flex: 1 1 200px; }
+  .command-list { gap: 0; border-top: 1px solid var(--border); }
+  .command-row { padding: 16px 0; align-items: flex-start; flex-wrap: nowrap; gap: 12px; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: transparent; }
+  .command-row > div { flex: 1; }
+  .command-row code { font-size: 13px; }
+  .command-row p { font-size: 13px; line-height: 1.6; }
+  .command-row button { padding: 8px 10px; font-size: 12px; max-width: 90px; overflow-wrap: anywhere; }
+  .faq details { padding-inline: 0; }
+  .faq summary { font-size: 15px; min-height: 64px; gap: 16px; padding-block: 18px; }
+  .faq details p { font-size: 14px; margin-right: 0; }
+  .shardot { gap: 26px; }
+  .shardot-resources { margin: 20px 0 24px; gap: 6px; }
+  .shardot-resources span { padding: 6px 8px; font-size: 11px; }
+  .shardot-copy .button { font-size: 14px; gap: 12px; padding-inline: 12px; }
+  .support { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; padding: 20px; margin-bottom: 36px; }
+  .support img { width: 40px; height: 40px; }
+  .support > div { min-width: 0; }
+  .support p { font-size: 14px; }
   .support h2 { font-size: 24px; }
-  .support .button { width: 100%; margin: 0; }
-  footer { gap: 20px; }
-  footer > p { font-size: 13px; }
+  .support .button { grid-column: 1 / -1; width: 100%; margin: 0; }
+  footer { grid-template-columns: 1fr; gap: 12px; padding-block: 28px; }
+  footer > p { font-size: 13px; text-align: left; }
+  footer > div { gap: 8px 20px; }
+  footer small { font-size: 11px; }
   .image-viewer { width: calc(100% - 24px); max-height: calc(100dvh - 24px); padding: 16px; }
   .viewer-toolbar { align-items: flex-start; gap: 16px; }
   .viewer-toolbar p { font-size: 16px; }
